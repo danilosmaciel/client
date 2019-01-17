@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome(*):"/>
+    <EditText
+        android:id="@+id/main_dlg_cadatro_edtNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:maxLines="1"
+        />
+    <!--senha e email -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senha(*):"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="text"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email(*):"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--fim senha e email -->
+    <!--rua e numero -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="90">
+            <TextView
+                android:id="@+id/dlg_login_tvRua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rua:" />
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtRua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="10">
+            <TextView
+                android:id="@+id/dlg_login_tvNro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Número:"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtNro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--fim rua e numero -->
+    <!--bairro e cidade -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bairro:"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtBairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cidade:"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--fim bairro e cidade -->
+    <!--telefones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefone Fixo:"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtTelefoneFixo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number|phone"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefone Celular:"/>
+            <EditText
+                android:id="@+id/main_dlg_cadatro_edtTelefoneCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number|phone"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <!--fim telefones -->
+    <!--botoes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="100"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/main_dlg_cadatro_btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            />
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/main_dlg_cadatro_btnGravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gravar"
+            />
+    </LinearLayout>
+    <!--fim botoes -->
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    >
+    <TextView
+        android:id="@+id/pricipal_activity_tvBoasVindas"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem Vindo "
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/principal_activity_btnIniciarPedido"
+        android:layout_below="@id/pricipal_activity_tvBoasVindas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Novo Pedido"
+
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        />
+    <Button
+        android:id="@+id/principal_activity_btnCadatrarEndereco"
+        android:layout_below="@id/principal_activity_btnIniciarPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Endereco"
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        />
+    <Button
+        android:id="@+id/pricipal_activity_btnHistoricoPedidos"
+        android:layout_below="@+id/principal_activity_btnCadatrarEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Histórico de Pedidos"
+        android:layout_marginTop="20dp"
+        android:layout_margin="5dp"
+        />
+    <ListView
+        android:id="@+id/principal_activity_lstHistoricPedidos"
+        android:layout_below="@id/pricipal_activity_btnHistoricoPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" android:padding="5dp">
+
+    </ListView>
+
+
+</RelativeLayout>

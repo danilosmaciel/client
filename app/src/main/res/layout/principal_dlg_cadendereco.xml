@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rua/Avenida(*):"/>
+    <EditText
+        android:id="@+id/principal_dlg_cadendereco_edtLogradouro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:maxLines="1"
+        />
+    <!--numero e bairro -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Número(*):"/>
+            <EditText
+                android:id="@+id/principal_dlg_cadendereco_edtNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="text"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="50">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bairro(*):"/>
+            <EditText
+                android:id="@+id/principal_dlg_cadendereco_edtBairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="text"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--fim numero e bairro -->
+    <!--cidade e referencia -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+>
+            <TextView
+                android:id="@+id/dlg_login_tvRua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cidade(*):" />
+            <EditText
+                android:id="@+id/principal_dlg_cadendereco_edtCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:maxLines="1"
+                />
+        </LinearLayout>
+    <!--fim cidade e refenrecia -->
+
+    <!--botoes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="100"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/principal_dlg_cadendereco_btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            />
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/principal_dlg_cadendereco_btnGravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gravar"
+            />
+    </LinearLayout>
+    <!--fim botoes -->
+</LinearLayout>

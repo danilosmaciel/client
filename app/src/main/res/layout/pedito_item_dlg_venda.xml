@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/btMenos"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="-"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/edtQtde"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:editable="false"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/btMais"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="+"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnAceitar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Aceitar"
+        android:textSize="20sp"
+        android:layout_gravity="center"/>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent" android:layout_width="match_parent"
+    >
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="100"
+            android:layout_margin="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Destaques"/>
+                <ListView
+                    android:id="@+id/pedido_item_destaque"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="75">
+
+                </ListView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Todos"/>
+                <ListView
+
+                    android:id="@+id/pedido_item_lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="25"
+                    android:padding="10dp"
+                    >
+
+                </ListView>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/pedido_item_btnFazerPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fazer o Pedido"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+</RelativeLayout>
+
+
+
