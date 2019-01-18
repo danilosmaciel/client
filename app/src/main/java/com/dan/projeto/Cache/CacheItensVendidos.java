@@ -75,4 +75,11 @@ public class CacheItensVendidos {
         return valorTotal;
     }
 
+    public int getQtdeItemVedida(String id) {
+         return _listaItensVendidos.get(id);
+    }
+
+    public boolean contem(String id) {
+        return _listaItensVendidos.containsKey(id) ;
+    }
 }

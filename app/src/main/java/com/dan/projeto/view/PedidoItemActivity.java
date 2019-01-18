@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dan.projeto.Cache.CacheItem;
 import com.dan.projeto.R;
@@ -55,7 +56,8 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
     private Button   _btnDiminuiQtde;
     private Button   _btnAceitar;
     private EditText _edtItemQtde;
-
+    private Item itemPosicionado;
+    private TextView tvTotal;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +69,9 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
             usuarioResponse = (UsuarioResponse)extras.getSerializable("usuario");
             _controller = new PedidoItemContoller(this, usuarioResponse);
         }
-        _dialogVenda = criaDialogVenda();
+
         initComponentes();
+        _dialogVenda = criaDialogVenda();
     }
 
     private void initComponentes() {
@@ -88,8 +91,7 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
 
                         _controller.getMsgItensVedidos();
                         AlertDialog dlg = criaDialogFechamento().create();
-                        //tvItensVendidos.setText(getMsgItensVendidos());
-                        dlg.setMessage(_controller.getMsgItensVedidos());
+                        tvTotal.setText(_controller.getMsgItensVedidos());
                         dlg.show();
 
                 }else{
@@ -109,7 +111,7 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
 
     private void carregaEnderecos(){
         EnderecoDAO enderecoDAO = new CarregaBanco().getDb(this).getEndereooDao();
-        _adapterEnderecos = new ArrayAdapter<Endereco>(this,android.R.layout.simple_list_item_1, enderecoDAO.getEnderecos());
+        _adapterEnderecos = new ArrayAdapter<Endereco>(this,android.R.layout.simple_list_item_1, enderecoDAO.getEnderecos(_controller.getClienteId()));
         if(_adapterEnderecos != null){
             _lstEnderecos.setAdapter( _adapterEnderecos);
         }
@@ -120,8 +122,6 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
         super.onStart();
         preencheItens();
         _controller.gerarNovoNumeroPedido();
-
-        //carregaListas();
     }
 
     @Override
@@ -189,20 +189,16 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Item item;
-        item = _adapterItens.getItem(position);
+
+        itemPosicionado = _adapterItens.getItem(position);
+        _edtItemQtde.setText(String.valueOf(_controller.getQtdeItemVendida(itemPosicionado.getId())));
         _dialogVenda.show();
-
-        Funcoes.showToastLongo(this,item.getDescricao());
-        _controller.insereItemVendido(item,Integer.parseInt(_edtItemQtde.getText().toString()));
-
     }
 
     public AlertDialog.Builder criaDialogFechamento() {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
-        alert.setTitle("Fechamento do Pedido");
-        alert.setMessage(" Podemos realizar o pedido?");
+        alert.setTitle("Realizar o pedido?");
         alert.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -212,10 +208,12 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
         alert.setNegativeButton("Não", null);
         View layoutLogin = inflater.inflate(R.layout.pedido_item_dlg_fechamento, null);
         alert.setView(layoutLogin);
-
-        //configuraComponentesCadastro(layoutLogin);
-
+        configuraComponentesDlgFechamento(layoutLogin);
         return alert;
+    }
+
+    private void configuraComponentesDlgFechamento(View layoutLogin) {
+        tvTotal = layoutLogin.findViewById(R.id.dlg_fechamento_itens);
     }
 
     public List<Item> getItensHttp(){
@@ -277,7 +275,7 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
     public AlertDialog criaDialogVenda() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
-        View layout = inflater.inflate(R.layout.pedido_item_dlg_venda, null);
+        View layout = inflater.inflate(R.layout.pedito_item_dlg_venda, null);
         builder.setTitle("Qual a quantidade!");
         builder.setView(layout);
         initComponentes(layout);
@@ -300,6 +298,13 @@ public class PedidoItemActivity extends AppCompatActivity implements ListView.On
                 }
             }
 
+        });
+        _btnAceitar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _controller.insereItemVendido(itemPosicionado,Integer.parseInt(_edtItemQtde.getText().toString()));
+                _dialogVenda.dismiss();
+            }
         });
 
         _btnAumentaQtde.setOnClickListener(new View.OnClickListener() {

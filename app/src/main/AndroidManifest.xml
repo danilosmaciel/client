@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.PedidoItemActivity" />
-        <activity android:name=".view.PrincipalActivity" />
+        <activity android:name=".PrincipalActivity" />
     </application>
 
 </manifest>

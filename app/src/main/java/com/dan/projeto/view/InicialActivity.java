@@ -1,12 +1,10 @@
 package com.dan.projeto.view;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,15 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.dan.projeto.PrincipalActivity;
 import com.dan.projeto.R;
 import com.dan.projeto.controller.MainController;
-import com.dan.projeto.dao.UsuarioDAO;
-import com.dan.projeto.database.CarregaBanco;
 import com.dan.projeto.helper.Funcoes;
-import com.dan.projeto.model.Usuario;
 import com.dan.projeto.model.UsuarioResponse;
-
-import java.text.Collator;
 
 public class InicialActivity extends AppCompatActivity implements View.OnClickListener{
     MainController _controller;

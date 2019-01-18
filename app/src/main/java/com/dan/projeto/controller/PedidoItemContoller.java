@@ -50,11 +50,15 @@ public class PedidoItemContoller {
 
 
     public void insereItemVendido(Item item, int qtde) {
-        _itensVendidos.adicionaItem(item.getId(),qtde);
+        if(qtde < 1){
+            _itensVendidos.removeItem(item.getId());
+        }else{
+            _itensVendidos.adicionaItem(item.getId(),qtde);
+        }
     }
 
-    public void removeItem(Item item, int qtde) {
-        _itensVendidos.adicionaItem(item.getId(),qtde);
+    public void removeItem(Item item) {
+        _itensVendidos.removeItem(item.getId());
 
     }
 
@@ -92,6 +96,7 @@ public class PedidoItemContoller {
         Calendar cal = new GregorianCalendar();
         sp.setTimeZone(cal.getTimeZone());
         _pedido.setDataPedido(sp.format(cal.getTime()));
+        _pedido.setValor(_itensVendidos.getValorTotalPedido());
         pedidoDAO.gravarPedido(_pedido);
     }
 
@@ -105,5 +110,17 @@ public class PedidoItemContoller {
 
     public boolean enderecoEstaVazio() {
         return !(_pedido.getEnderecoEntrega() > 0);
+    }
+
+    public int getQtdeItemVendida(String id) {
+
+            if(_itensVendidos.contem(id)){
+                return _itensVendidos.getQtdeItemVedida(id);
+            }
+            return 0;
+    }
+
+    public String getClienteId() {
+        return _usuario.getId();
     }
 }

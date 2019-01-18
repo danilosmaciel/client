@@ -1,7 +1,6 @@
 package com.dan.projeto.dao;
 
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
@@ -21,8 +20,8 @@ public abstract class EnderecoDAO {
     public abstract Endereco getEndereco(int id);
 
 
-    @Query("SELECT * FROM endereco")
-    public abstract List<Endereco> getEnderecos();
+    @Query("SELECT * FROM endereco where cliente = :clienteId")
+    public abstract List<Endereco> getEnderecos(String clienteId);
 
     @Update()
     public abstract void atualizaEndereco(Pedido pedido);

@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="40dp"
-    android:orientation="vertical">
-    <TextView
+    android:layout_margin="40dp">
+    <RelativeLayout
+        android:id="@+id/dlg_fechamento_linha1"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Itens Vendidos"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:textAlignment="center"/>
-    <TextView
-        android:id="@+id/dlg_fechamento_itens"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textStyle="bold"
-        android:textSize="10dp"
-        android:textAlignment="center"/>
-    <TextView
-        android:id="@+id/dlg_fechamento_valoTotal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Total"
-        android:textStyle="bold"
-        android:textSize="10dp"
-        android:layout_gravity="bottom|right"/>
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/dlg_fechamento_textofixo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Itens Vendidos"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textAlignment="center"/>
+    </RelativeLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dlg_fechamento_linha1"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/dlg_fechamento_itens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="texto"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

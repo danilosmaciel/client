@@ -97,8 +97,7 @@ public class Pedido {
     public String toString() {
         CacheItensVendidos cacheItensVendidos = CacheItensVendidos.getINSTANCE();
         return "Nro do pedido: "+getNumeroPedido() +
-                "Valor: " + getValor() +
-                "Data: " + getDataPedido() ;
-
+                "\nData: " + getDataPedido() +
+                "\nValor: " + getValor();
     }
 }

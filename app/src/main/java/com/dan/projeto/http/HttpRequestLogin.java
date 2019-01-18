@@ -5,16 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.dan.projeto.helper.Funcoes;
 import com.dan.projeto.model.Usuario;
 import com.dan.projeto.model.UsuarioResponse;
-import com.dan.projeto.view.InicialActivity;
-import com.dan.projeto.view.PrincipalActivity;
 import com.google.gson.Gson;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -22,14 +17,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.util.Scanner;
 
 
-
-    public class HttpRequestLogin extends AsyncTask<Void, Void, UsuarioResponse> {
+public class HttpRequestLogin extends AsyncTask<Void, Void, UsuarioResponse> {
 
         private final String _login;
         private final String _senha;

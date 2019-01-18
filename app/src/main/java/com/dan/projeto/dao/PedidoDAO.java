@@ -25,4 +25,7 @@ public abstract class PedidoDAO {
 
     @Query("SELECT COUNT(1) FROM pedido")
     public abstract int getQtdePedidos();
+
+    @Query("SELECT *  FROM pedido WHERE cliente = :clienteId")
+    public abstract List<Pedido> getPedidosCliente(String clienteId);
 }
